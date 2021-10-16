@@ -1,0 +1,16 @@
+{
+  "name": "@fadoli/node-fast-running-stats",
+  "version": "1.0.0",
+  "description": "get data from node-red",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "c8 pta"
+  },
+  "devDependencies": {
+    "c8": "7.10.0",
+    "pta": "^1.0.0",
+    "zora": "^5.0.0"
+  },
+  "author": "https://github.com/Fadoli",
+  "license": "MIT"
+}
