@@ -1,4 +1,7 @@
 *.md
 *.tgz
-*.test.js
 coverage/
+
+*.test.js
+!/src/*.js
+*.js

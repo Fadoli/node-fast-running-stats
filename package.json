@@ -5,6 +5,7 @@
   "main": "src/index.js",
   "keywords": ["stats", "running stats", "rolling stats"],
   "scripts": {
+    "bench": "node ./bench.js",
     "test": "c8 pta"
   },
   "devDependencies": {

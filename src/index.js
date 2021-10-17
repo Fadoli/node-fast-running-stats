@@ -18,12 +18,12 @@ class statsArray {
          */
         this.min = Number.MAX_VALUE;
         this.minIndex = undefined;
-        this.max = -Number.MAX_VALUE;
+        this.max = Number.MIN_VALUE;
         this.maxIndex = undefined;
         this.sum = 0;
         this.mean = 0;
 
-        this.nextCompute = RECOMPUTE_COUNT;
+        this.nextCompute = Math.max(2*size, RECOMPUTE_COUNT);
     }
 
     /**
@@ -162,7 +162,7 @@ class statsArray {
      */
     recompute() {
         // Reinit compute count
-        this.nextCompute = RECOMPUTE_COUNT;
+        this.nextCompute = Math.max(2 * size, RECOMPUTE_COUNT);
 
         this.q = 0;
         this.sum = 0;
