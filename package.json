@@ -1,6 +1,6 @@
 {
   "name": "@fadoli/node-fast-running-stats",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "library for computing running (or rolling) statistics for one set of values.",
   "main": "src/index.js",
   "keywords": ["stats", "running stats", "rolling stats"],

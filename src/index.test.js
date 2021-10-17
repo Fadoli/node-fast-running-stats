@@ -19,6 +19,22 @@ test("statsArray", (t) => {
     });
 
 
+    t.test('should have good stats : 0', function () {
+        const stat = new StatsArray(10);
+        stat.append(0);
+        t.deepEqual(stat.getStats(), { "n": 1, "min": 0, "max": 0, "sum": 0, "mean": 0, "variance": 0, "standard_deviation": 0 });
+    });
+    t.test('should have good stats : 1', function () {
+        const stat = new StatsArray(10);
+        stat.append(1);
+        t.deepEqual(stat.getStats(), { "n": 1, "min": 1, "max": 1, "sum": 1, "mean": 1, "variance": 0, "standard_deviation": 0 });
+    });
+    t.test('should have good stats : -1', function () {
+        const stat = new StatsArray(10);
+        stat.append(-1);
+        t.deepEqual(stat.getStats(), { "n": 1, "min": -1, "max": -1, "sum": -1, "mean": -1, "variance": 0, "standard_deviation": 0 });
+    });
+
     t.test('should properly compute min', function () {
         const stat = new StatsArray(2);
         stat.append(1);

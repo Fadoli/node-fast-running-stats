@@ -18,12 +18,12 @@ class statsArray {
          */
         this.min = Number.MAX_VALUE;
         this.minIndex = undefined;
-        this.max = Number.MIN_VALUE;
+        this.max = -Number.MAX_VALUE;
         this.maxIndex = undefined;
         this.sum = 0;
         this.mean = 0;
 
-        this.nextCompute = Math.max(2*size, RECOMPUTE_COUNT);
+        this.nextCompute = Math.max(2 * this.size, RECOMPUTE_COUNT);
     }
 
     /**
@@ -35,7 +35,7 @@ class statsArray {
         // Go the other way around so that we have most chance to find the min 'farther' away from our position
         let iterator = this.index;
         const previousMin = this.min;
-        let min = this.max+1;
+        let min = this.max + 1;
         let minIndex;
         for (iteration = 0; iteration < this.n; iteration++) {
             iterator--;
@@ -64,7 +64,7 @@ class statsArray {
         // Go the other way around so that we have most chance to find the min 'farther' away from our position
         let iterator = this.index;
         const previousMax = this.max;
-        let max = this.min-1;
+        let max = this.min - 1;
         let maxIndex;
         for (iteration = 0; iteration < this.n; iteration++) {
             iterator--;
@@ -162,7 +162,7 @@ class statsArray {
      */
     recompute() {
         // Reinit compute count
-        this.nextCompute = Math.max(2 * size, RECOMPUTE_COUNT);
+        this.nextCompute = Math.max(2 * this.size, RECOMPUTE_COUNT);
 
         this.q = 0;
         this.sum = 0;
