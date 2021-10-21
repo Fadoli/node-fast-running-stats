@@ -46,10 +46,6 @@ class statsArray {
             if (element < min) {
                 minIndex = iterator;
                 min = element;
-                // Don't look for another one, this was the previous min
-                if (element === previousMin) {
-                    break;
-                }
             }
         }
         this.minIndex = minIndex;
@@ -61,7 +57,7 @@ class statsArray {
      */
     #computeMax() {
         let iteration;
-        // Go the other way around so that we have most chance to find the min 'farther' away from our position
+        // Go the other way around so that we have most chance to find the max 'farther' away from our position
         let iterator = this.index;
         const previousMax = this.max;
         let max = this.min - 1;
@@ -75,10 +71,6 @@ class statsArray {
             if (element > max) {
                 maxIndex = iterator;
                 max = element;
-                // Don't look for another one, this was the previous max
-                if (element === previousMax) {
-                    break;
-                }
             }
         }
         this.maxIndex = maxIndex;

@@ -74,7 +74,7 @@ This module's approach creates more errors related to the float precision errors
 
 ## Coverage
 
-File      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s
-----------|---------|----------|---------|---------|---------------------
-All files |   96.82 |    89.65 |     100 |   96.82 |
- index.js |   96.82 |    89.65 |     100 |   96.82 | 51-52,80-81,131-132
+File      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+----------|---------|----------|---------|---------|-------------------
+All files |     100 |      100 |     100 |     100 | 
+ index.js |     100 |      100 |     100 |     100 | 
