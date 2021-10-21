@@ -3,7 +3,14 @@
   "version": "1.0.2",
   "description": "library for computing running (or rolling) statistics for one set of values.",
   "main": "src/index.js",
-  "keywords": ["stats", "running stats", "rolling stats"],
+  "keywords": ["stats", "running stats", "rolling stats", "min", "max", "mean", "average", "standard deviation"],
+  "license": "MIT",
+  "author": "https://github.com/Fadoli",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Fadoli/node-fast-running-stats.git"
+  },
+  "homepage": "https://www.npmjs.com/package/@fadoli/node-fast-running-stats",
   "scripts": {
     "bench": "node ./bench.js",
     "test": "c8 pta"
@@ -12,7 +19,5 @@
     "c8": "7.10.0",
     "pta": "^1.0.0",
     "zora": "^5.0.0"
-  },
-  "author": "https://github.com/Fadoli",
-  "license": "MIT"
+  }
 }

@@ -2,6 +2,10 @@
 
 This is a JavaScript/Node.js library for computing running (or rolling) statistics for one set of values.
 
+Can be found on :
+* [npm](https://www.npmjs.com/package/@fadoli/node-fast-running-stats)
+* [github](https://github.com/Fadoli/node-fast-running-stats)
+
 ## Usage
 
 ```js
@@ -43,7 +47,7 @@ fastStats implem, size = 3000: 23.957ms
 
 Here is the difference in output when both methods are compared :
 
-```
+```js
 {
   simple: {
     n: 3000,
