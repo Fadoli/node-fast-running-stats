@@ -2,6 +2,8 @@
 
 This is a JavaScript/Node.js library for computing running (or rolling) statistics for one set of values.
 
+Requires node 14 or more recent.
+
 Can be found on :
 * [npm](https://www.npmjs.com/package/@fadoli/node-fast-running-stats)
 * [github](https://github.com/Fadoli/node-fast-running-stats)
