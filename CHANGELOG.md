@@ -7,11 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.0.3] 2021-12-11
 
+### Changed
+
+* [Documentation] Add nodejs 14 requirements in `README.md`, `package.json`. 
+* [Documentation] Add npm and github URLs in `README.md`.
+
 ### Internal
 
 * [Deps] Update pta and zora dev-dependencies.
-* [Documentation] Add nodejs 14 requirements in `README.md`, `package.json`. 
-* [Documentation] Add npm and github URLs in `README.md`.
 * [Coverage] Removed redundant/useless if.
 * [Coverage] Completed existing tests to reach 100% coverage.
 
