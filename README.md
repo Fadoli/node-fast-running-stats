@@ -5,6 +5,7 @@ This is a JavaScript/Node.js library for computing running (or rolling) statisti
 Requires node 14 or more recent.
 
 Can be found on :
+
 * [npm](https://www.npmjs.com/package/@fadoli/node-fast-running-stats)
 * [github](https://github.com/Fadoli/node-fast-running-stats)
 
@@ -31,20 +32,20 @@ We add twice the size one per one and compute the stats each time.
 This means for size 10 we will compute stats on 1,2,3,4,5,6,7,8,9,10 entries at first, then on 10 entries 10 times.
 
 ```
-simple rollingArray implem, size = 10: 3.336ms
-fastStats implem, size = 10: 2.117ms
+simple rollingArray implem, size = 10: 2.903ms
+fastStats implem, size = 10: 3.149ms
 
-simple rollingArray implem, size = 100: 19.857ms
-fastStats implem, size = 100: 5.889ms
+simple rollingArray implem, size = 100: 22.486ms
+fastStats implem, size = 100: 3.946ms
 
-simple rollingArray implem, size = 1000: 1.349s
-fastStats implem, size = 1000: 7.2ms
+simple rollingArray implem, size = 1000: 1.318s
+fastStats implem, size = 1000: 10.619ms
 
-simple rollingArray implem, size = 2000: 5.109s
-fastStats implem, size = 2000: 14.279ms
+simple rollingArray implem, size = 2000: 4.882s
+fastStats implem, size = 2000: 12.948ms
 
-simple rollingArray implem, size = 3000: 11.629s
-fastStats implem, size = 3000: 23.957ms
+simple rollingArray implem, size = 3000: 11.237s
+fastStats implem, size = 3000: 21.145ms
 ```
 
 Here is the difference in output when both methods are compared :
@@ -76,7 +77,7 @@ This module's approach creates more errors related to the float precision errors
 
 ## Coverage
 
-File      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+File      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s
 ----------|---------|----------|---------|---------|-------------------
-All files |     100 |      100 |     100 |     100 | 
- index.js |     100 |      100 |     100 |     100 | 
+All files |   98.91 |    96.29 |     100 |   98.91 |
+ index.js |   98.91 |    96.29 |     100 |   98.91 | 119-120

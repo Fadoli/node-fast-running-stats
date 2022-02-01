@@ -115,6 +115,9 @@ class statsArray {
         const prevMean = this.mean;
         this.mean = this.sum / this.n;
         this.q += (num - prevMean) * (num - this.mean);
+        if (this.q < 0) {
+            this.q = 0;
+        }
 
         this.index = (this.index + 1) % this.size;
 
