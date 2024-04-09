@@ -1,5 +1,9 @@
 const RECOMPUTE_COUNT = 25000;
 
+/**
+ * @description This class will compute fast statistics on an array of numbers
+ * @class statsArray
+ */
 class statsArray {
     /**
      * @description Creates an instance of statsArray.
@@ -34,7 +38,6 @@ class statsArray {
         let iteration;
         // Go the other way around so that we have most chance to find the min 'farther' away from our position
         let iterator = this.index;
-        const previousMin = this.min;
         let min = this.max + 1;
         let minIndex;
         for (iteration = 0; iteration < this.n; iteration++) {
@@ -59,7 +62,6 @@ class statsArray {
         let iteration;
         // Go the other way around so that we have most chance to find the max 'farther' away from our position
         let iterator = this.index;
-        const previousMax = this.max;
         let max = this.min - 1;
         let maxIndex;
         for (iteration = 0; iteration < this.n; iteration++) {
@@ -80,41 +82,45 @@ class statsArray {
 
     /**
      * @description Add a new entry for this fast-statistic computation
-     * @param {number} num
-     * @returns
+     * @param {number} newEntry
+     * @returns {statsArray} itself
+     * @memberof statsArray
      */
-    append(num) {
+    append(newEntry) {
         const previousEntry = this.array[this.index];
+        // If we have a previous entry we remove it from the sum, mean and q
         if (previousEntry !== undefined) {
             this.sum -= previousEntry;
             const prevMean = this.mean;
             this.mean = this.sum / this.n;
             this.q -= (previousEntry - prevMean) * (previousEntry - this.mean);
+            // q should never be negative, so if it is negative we set it to zero
             if (this.q < 0) {
                 this.q = 0;
             }
         } else {
             this.n++;
         }
-        this.array[this.index] = num;
+        this.array[this.index] = newEntry;
 
-        if (num <= this.min) {
+        if (newEntry <= this.min) {
             this.minIndex = this.index;
-            this.min = num;
+            this.min = newEntry;
         } else if (this.minIndex === this.index) {
             this.#computeMin();
         }
-        if (num >= this.max) {
+        if (newEntry >= this.max) {
             this.maxIndex = this.index;
-            this.max = num;
+            this.max = newEntry;
         } else if (this.maxIndex === this.index) {
             this.#computeMax();
         }
 
-        this.sum += num;
+        this.sum += newEntry;
         const prevMean = this.mean;
         this.mean = this.sum / this.n;
-        this.q += (num - prevMean) * (num - this.mean);
+        this.q += (newEntry - prevMean) * (newEntry - this.mean);
+        // q should never be negative, so if it is negative we set it to zero
         if (this.q < 0) {
             this.q = 0;
         }
@@ -131,7 +137,7 @@ class statsArray {
 
     /**
      * @description Get the stats with all current elements :)
-     * @returns
+     * @returns {{n: number, min: number, max: number, sum: number, mean: number, variance: number, standard_deviation: number}}
      * @memberof statsArray
      */
     getStats() {
@@ -152,7 +158,7 @@ class statsArray {
 
     /**
      * @description We will compute proper variance here (reset float computation error)
-     * @returns {Object}
+     * @returns {{n: number, min: number, max: number, sum: number, mean: number, variance: number, standard_deviation: number}}
      * @memberof statsArray
      */
     recompute() {
