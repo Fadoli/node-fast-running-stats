@@ -4,7 +4,7 @@ This is a JavaScript/Node.js library for computing running (or rolling) statisti
 
 Any up to date nodejs compatible runtime should properly work. (bun / nodejs).
 
-For testing, node 18.17.0 or more recent is required, or an up to date bun runtime.
+Node 18.17.0 or more recent is required (specially for tests), or an up to date bun runtime.
 
 Can be found on :
 
