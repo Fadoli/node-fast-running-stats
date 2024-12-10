@@ -22,14 +22,11 @@
   "homepage": "https://www.npmjs.com/package/@fadoli/node-fast-running-stats",
   "scripts": {
     "bench": "node ./bench.js",
-    "test": "c8 pta"
-  },
-  "devDependencies": {
-    "c8": "^9.1.0",
-    "pta": "^1.0.2",
-    "zora": "^5.0.1"
+    "test": "node --experimental-test-coverage --test --test-reporter=spec",
+    "test:bun": "bun test --coverage"
   },
   "engines": {
-    "node": ">=14"
+    "node": ">=18.17.0",
+    "bun": ">=1.1.38"
   }
 }

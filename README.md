@@ -2,7 +2,9 @@
 
 This is a JavaScript/Node.js library for computing running (or rolling) statistics for one set of values.
 
-Requires node 14 or more recent.
+Any up to date nodejs compatible runtime should properly work. (bun / nodejs).
+
+For testing, node 18.17.0 or more recent is required, or an up to date bun runtime.
 
 Can be found on :
 
